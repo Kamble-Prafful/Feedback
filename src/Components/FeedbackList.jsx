@@ -11,7 +11,7 @@ const FeedbackList = () => {
   }
   return (
     <>
-      {/* <div className="feedback-item">
+      <div className="feedback-item">
         <AnimatePresence>
           {feedback.map((item) => (
             <motion.div
@@ -24,12 +24,6 @@ const FeedbackList = () => {
             </motion.div>
           ))}
         </AnimatePresence>
-      </div> */}
-
-      <div className="feedback-item">
-        {feedback.map((item) => (
-          <FeedbackItem key={item.id} item={item} />
-        ))}
       </div>
     </>
   );
