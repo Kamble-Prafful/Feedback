@@ -45,6 +45,16 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
+  // Update edited Feedback
+  const updateFeedback = (id, updatedItem) => {
+    setFeedback(
+      feedback.map((item) =>
+        item.id === id ? { ...item, ...updatedItem } : item
+      )
+    );
+  };
+
+  //Edit Feedback
   const editItem = (item) => {
     setEditFeedback({
       item,
@@ -59,6 +69,8 @@ export const FeedbackProvider = ({ children }) => {
         deleteItem,
         addFeedback,
         editItem,
+        editFeedback,
+        updateFeedback,
       }}
     >
       {children}

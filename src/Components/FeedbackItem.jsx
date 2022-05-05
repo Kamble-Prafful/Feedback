@@ -12,10 +12,22 @@ const FeedbackItem = ({ item }) => {
       <form>
         <Card>
           <div className="num-display">{item.rating}</div>
-          <button onClick={() => deleteItem(item.id)} className="close">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              deleteItem(item.id);
+            }}
+            className="close"
+          >
             <FaTimes color="purple" />
           </button>
-          <button onClick={() => editItem(item)} className="edit">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              editItem(item);
+            }}
+            className="edit"
+          >
             <FaEdit color="purple" />
           </button>
           <div className="text-display">{item.text}</div>

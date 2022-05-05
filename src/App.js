@@ -9,8 +9,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AboutIcon from "./Shared/AboutIcon";
 
 function App() {
-  // const [feedback, setFeedback] = useState(FeedbackData);
-
   return (
     <FeedbackProvider>
       <Router>
@@ -18,7 +16,6 @@ function App() {
         <div className="container">
           <Routes>
             <Route
-              exact
               path="/"
               element={
                 <>

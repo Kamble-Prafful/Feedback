@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Header = ({ bgColor, textColor }) => {
@@ -11,7 +10,7 @@ const Header = ({ bgColor, textColor }) => {
     <>
       <header style={headerStyles}>
         <div className="container">
-          <Link exact to="/" style={{ textDecoration: "none" }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <h2>Feedback UI</h2>
           </Link>
         </div>
