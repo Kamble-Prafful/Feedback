@@ -22,18 +22,18 @@ function FeedbackForm() {
     }
   }, [editFeedback]);
 
-  const changeTextHandler = (e) => {
-    if (text === "") {
+  const changeTextHandler = ({ target: { value } }) => {
+    if (value === "") {
       setBtnDisabled(true);
       setMessage(null);
-    } else if (text !== "" && text.trim().length < 10) {
+    } else if (value.trim().length < 10) {
       setBtnDisabled(true);
       setMessage("Text must be more than 10 characters.");
     } else {
       setBtnDisabled(false);
       setMessage(null);
     }
-    setChangeText(e.target.value);
+    setChangeText(value);
   };
 
   const submitHandler = (e) => {
@@ -50,6 +50,8 @@ function FeedbackForm() {
         addFeedback(newFeedback);
       }
 
+      setBtnDisabled(true);
+      setRating(10);
       setChangeText("");
     }
   };
