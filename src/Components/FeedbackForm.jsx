@@ -7,7 +7,7 @@ import FeedbackContext from "../Context/FeedbackContext";
 
 function FeedbackForm() {
   const [text, setChangeText] = useState("");
-  const [rating, setRating] = useState();
+  const [rating, setRating] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
@@ -45,6 +45,7 @@ function FeedbackForm() {
       };
 
       if (editFeedback.edit === true) {
+        console.log(editFeedback.item.id, newFeedback);
         updateFeedback(editFeedback.item.id, newFeedback);
       } else {
         addFeedback(newFeedback);

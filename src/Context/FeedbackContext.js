@@ -51,7 +51,7 @@ export const FeedbackProvider = ({ children }) => {
 
   // Update edited feedback
   const updateFeedback = async (id, updatedItem) => {
-    console.log(id);
+    console.log(id, updatedItem);
     const response = await fetch(`/feedback/${id}`, {
       method: "PUT",
       headers: {
@@ -71,7 +71,7 @@ export const FeedbackProvider = ({ children }) => {
   //Edit Feedback
   const editItem = (item) => {
     setEditFeedback({
-      item: {},
+      item,
       edit: true,
     });
   };
