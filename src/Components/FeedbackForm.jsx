@@ -7,7 +7,7 @@ import FeedbackContext from "../Context/FeedbackContext";
 
 function FeedbackForm() {
   const [text, setChangeText] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
@@ -45,7 +45,6 @@ function FeedbackForm() {
       };
 
       if (editFeedback.edit === true) {
-        console.log(editFeedback.item.id, newFeedback);
         updateFeedback(editFeedback.item.id, newFeedback);
       } else {
         addFeedback(newFeedback);
@@ -60,7 +59,7 @@ function FeedbackForm() {
     <form onSubmit={submitHandler}>
       <Card>
         <h2>How would you rate your service with us?</h2>
-        <RatingSelect select={(rating) => setRating(rating)} />
+        <RatingSelect select={setRating} selected={rating} />
         <div className="input-group">
           <input
             onChange={changeTextHandler}

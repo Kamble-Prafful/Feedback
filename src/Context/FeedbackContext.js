@@ -51,11 +51,10 @@ export const FeedbackProvider = ({ children }) => {
 
   // Update edited feedback
   const updateFeedback = async (id, updatedItem) => {
-    console.log(id, updatedItem);
     const response = await fetch(`/feedback/${id}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/body",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(updatedItem),
     });
